@@ -1,5 +1,6 @@
 #include <iostream>
 #include <windows.h>
+#include <conio.h>
 #include <fstream>
 
 using namespace std;
@@ -7,6 +8,10 @@ using namespace std;
 int keys(char key, fstream&);
 
 int main(){
+
+  char key_press;
+  int ascii_value;
+
   fstream afile;
 
   afile.open("key_file.txt", ios::in | ios::out);
@@ -17,7 +22,7 @@ int main(){
     /* Block 1 Starts */
     key_press = getch();
     ascii_value = key_press;
-    // cout << "Here --> " << key_press << endl;
+    cout << "Here --> " << key_press << endl;
     // cout << "Async --> " << ascii_value << endl;
     if(7 < ascii_value && ascii_value < 256){
       keys(key_press, afile);
